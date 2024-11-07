@@ -1,0 +1,197 @@
+# Parameters for Config:
+# ==============================================================================
+Config.adam_beta1 = 0.9
+Config.adam_beta2 = 0.999
+Config.adam_eps = 1e-06
+Config.apply_bayer_mask = False
+Config.autoexpose_renders = False
+Config.batch_size = 16384
+Config.batching = 'all_images'
+Config.cast_rays_in_train_step = False
+Config.charb_padding = 0.001
+Config.checkpoint_dir = None
+Config.checkpoint_every = 25000
+Config.compute_disp_metrics = False
+Config.compute_normal_metrics = False
+Config.data_coarse_loss_mult = 0.0
+Config.data_dir = None
+Config.data_loss_mult = 1.0
+Config.data_loss_type = 'charb'
+Config.dataset_loader = 'llff'
+Config.deterministic_showcase = True
+Config.disable_multiscale_loss = False
+Config.distortion_loss_mult = 0.01
+Config.early_exit_steps = None
+Config.enable_robustnerf_loss = False
+Config.eval_crop_borders = 0
+Config.eval_dataset_limit = 2147483647
+Config.eval_only_once = True
+Config.eval_quantize_metrics = True
+Config.eval_raw_affine_cc = False
+Config.eval_render_interval = 1
+Config.eval_save_output = True
+Config.eval_save_ray_data = False
+Config.exposure_percentile = 97.0
+Config.factor = 4
+Config.far = 1000000.0
+Config.forward_facing = False
+Config.gc_every = 10000
+Config.grad_max_norm = 0.001
+Config.grad_max_val = 0.0
+Config.interlevel_loss_mult = 1.0
+Config.llff_use_all_images_for_training = False
+Config.llffhold = 8
+Config.load_alphabetical = True
+Config.lr_delay_mult = 0.01
+Config.lr_delay_steps = 512
+Config.lr_final = 2e-05
+Config.lr_init = 0.002
+Config.max_steps = 250000
+Config.near = 0.2
+Config.num_border_pixels_to_mask = 0
+Config.num_showcase_images = 5
+Config.orientation_coarse_loss_mult = 0.0
+Config.orientation_loss_mult = 0.0
+Config.orientation_loss_target = 'normals_pred'
+Config.patch_size = 1
+Config.predicted_normal_coarse_loss_mult = 0.0
+Config.predicted_normal_loss_mult = 0.0
+Config.print_every = 100
+Config.randomized = True
+Config.rawnerf_mode = False
+Config.render_camtype = None
+Config.render_chunk_size = 16384
+Config.render_dir = None
+Config.render_dist_percentile = 0.5
+Config.render_focal = None
+Config.render_job_id = 0
+Config.render_num_jobs = 1
+Config.render_path = False
+Config.render_path_file = None
+Config.render_path_frames = 120
+Config.render_resolution = None
+Config.render_save_async = True
+Config.render_spherical = False
+Config.render_spline_degree = 5
+Config.render_spline_interpolate_exposure = False
+Config.render_spline_keyframes = None
+Config.render_spline_n_interp = 30
+Config.render_spline_smoothness = 0.03
+Config.render_video_crf = 18
+Config.render_video_fps = 60
+Config.robustnerf_inlier_quantile = 0.5
+Config.robustnerf_inner_patch_inlier_quantile = 0.5
+Config.robustnerf_inner_patch_size = 8
+Config.robustnerf_smoothed_filter_size = 3
+Config.robustnerf_smoothed_inlier_quantile = 0.5
+Config.train_render_every = 5000
+Config.use_tiffs = False
+Config.vis_decimate = 0
+Config.vis_num_rays = 16
+Config.vocab_tree_path = None
+Config.z_phase = 0.0
+Config.z_variation = 0.0
+
+# Parameters for contract:
+# ==============================================================================
+# None.
+
+# Parameters for Model:
+# ==============================================================================
+Model.anneal_slope = 10
+Model.bg_intensity_range = (1.0, 1.0)
+Model.dilation_bias = 0.0025
+Model.dilation_multiplier = 0.5
+Model.disable_integration = False
+Model.learned_exposure_scaling = False
+Model.name = None
+Model.near_anneal_init = 0.95
+Model.near_anneal_rate = None
+Model.num_glo_embeddings = 1000
+Model.num_glo_features = 0
+Model.num_levels = 3
+Model.num_nerf_samples = 32
+Model.num_prop_samples = 64
+Model.opaque_background = True
+Model.ray_shape = 'cone'
+Model.raydist_fn = @jnp.reciprocal
+Model.resample_padding = 0.0
+Model.single_jitter = True
+Model.single_mlp = False
+Model.stop_level_grad = True
+Model.use_gpu_resampling = False
+Model.use_viewdirs = True
+
+# Parameters for NerfMLP:
+# ==============================================================================
+NerfMLP.basis_shape = 'icosahedron'
+NerfMLP.basis_subdivisions = 2
+NerfMLP.bottleneck_noise = 0.0
+NerfMLP.bottleneck_width = 256
+NerfMLP.deg_view = 4
+NerfMLP.density_bias = -1.0
+NerfMLP.density_noise = 0.0
+NerfMLP.disable_density_normals = True
+NerfMLP.disable_rgb = False
+NerfMLP.enable_pred_normals = False
+NerfMLP.enable_pred_roughness = False
+NerfMLP.max_deg_point = 12
+NerfMLP.min_deg_point = 0
+NerfMLP.name = None
+NerfMLP.net_depth = 8
+NerfMLP.net_depth_viewdirs = 1
+NerfMLP.net_width = 1024
+NerfMLP.net_width_viewdirs = 128
+NerfMLP.num_rgb_channels = 3
+NerfMLP.rgb_bias = 0.0
+NerfMLP.rgb_padding = 0.001
+NerfMLP.rgb_premultiplier = 1.0
+NerfMLP.roughness_bias = -1.0
+NerfMLP.skip_layer = 4
+NerfMLP.skip_layer_dir = 4
+NerfMLP.use_diffuse_color = False
+NerfMLP.use_directional_enc = False
+NerfMLP.use_n_dot_v = False
+NerfMLP.use_reflections = False
+NerfMLP.use_specular_tint = False
+NerfMLP.warp_fn = @coord.contract
+NerfMLP.weight_init = 'he_uniform'
+
+# Parameters for PropMLP:
+# ==============================================================================
+PropMLP.basis_shape = 'icosahedron'
+PropMLP.basis_subdivisions = 2
+PropMLP.bottleneck_noise = 0.0
+PropMLP.bottleneck_width = 256
+PropMLP.deg_view = 4
+PropMLP.density_bias = -1.0
+PropMLP.density_noise = 0.0
+PropMLP.disable_density_normals = True
+PropMLP.disable_rgb = True
+PropMLP.enable_pred_normals = False
+PropMLP.enable_pred_roughness = False
+PropMLP.max_deg_point = 12
+PropMLP.min_deg_point = 0
+PropMLP.name = None
+PropMLP.net_depth = 4
+PropMLP.net_depth_viewdirs = 1
+PropMLP.net_width = 256
+PropMLP.net_width_viewdirs = 128
+PropMLP.num_rgb_channels = 3
+PropMLP.rgb_bias = 0.0
+PropMLP.rgb_padding = 0.001
+PropMLP.rgb_premultiplier = 1.0
+PropMLP.roughness_bias = -1.0
+PropMLP.skip_layer = 4
+PropMLP.skip_layer_dir = 4
+PropMLP.use_diffuse_color = False
+PropMLP.use_directional_enc = False
+PropMLP.use_n_dot_v = False
+PropMLP.use_reflections = False
+PropMLP.use_specular_tint = False
+PropMLP.warp_fn = @coord.contract
+PropMLP.weight_init = 'he_uniform'
+
+# Parameters for reciprocal:
+# ==============================================================================
+# None.
